@@ -17,7 +17,7 @@ const VehicleCard = ({ vehicle }) => {
         </div>
         <div className="vehicle-meta">
           <span className="vehicle-size">{size}</span>
-          <span className="vehicle-price">${price}/day</span>
+          <span className="vehicle-price">Rs.{price}/day</span>
         </div>
         <button className="rent-button">Rent Now</button>
       </div>

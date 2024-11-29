@@ -58,9 +58,9 @@ const VehicleFilter = ({ onFilterChange }) => {
           onChange={handleFilterChange}
         >
           <option value="all">All Sizes</option>
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
+          <option value="small">Small 5 seats</option>
+          <option value="medium">Medium 7 seats</option>
+          <option value="large">Large 7+ seats</option>
         </select>
       </div>
 
@@ -72,10 +72,10 @@ const VehicleFilter = ({ onFilterChange }) => {
           onChange={handleFilterChange}
         >
           <option value="all">All Prices</option>
-          <option value="0-50">$0 - $50</option>
-          <option value="51-100">$51 - $100</option>
-          <option value="101-150">$101 - $150</option>
-          <option value="151+">$151+</option>
+          <option value="0-50">Rs.0 - Rs.50</option>
+          <option value="51-100">Rs.51 - Rs.100</option>
+          <option value="101-150">Rs.101 - Rs.150</option>
+          <option value="151+">Rs.151+</option>
         </select>
       </div>
     </div>
