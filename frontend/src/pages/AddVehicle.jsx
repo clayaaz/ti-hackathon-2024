@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './AddVehicle.css'
+import './css/AddVehicle.css'
 
 const AddVehicle = () => {
   const [formData, setFormData] = useState({
