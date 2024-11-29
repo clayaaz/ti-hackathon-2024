@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './css/RegisterPage.css'
 
 const RegisterPage = () => {
-  const [formData, setFormData] = useState({
+  const [users, setusers] = useState({
     name: '',
     username: '',
     email: '',
@@ -14,16 +14,16 @@ const RegisterPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     // Add registration logic here
-    if (formData.password !== formData.confirmPassword) {
+    if (users.password !== users.confirmPassword) {
       alert('Passwords do not match!')
       return
     }
-    console.log('Register attempt:', formData)
+    console.log('Register attempt:', users)
   }
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
+    setusers({
+      ...users,
       [e.target.name]: e.target.value
     })
   }
@@ -38,7 +38,7 @@ const RegisterPage = () => {
             type="text"
             name="name"
             placeholder="Name"
-            value={formData.name}
+            value={users.name}
             onChange={handleChange}
             required
           />
@@ -49,7 +49,7 @@ const RegisterPage = () => {
             type="text"
             name="username"
             placeholder="Username"
-            value={formData.username}
+            value={users.username}
             onChange={handleChange}
             required
           />
@@ -60,7 +60,7 @@ const RegisterPage = () => {
             type="email"
             name="email"
             placeholder="Email"
-            value={formData.email}
+            value={users.email}
             onChange={handleChange}
             required
           />
@@ -71,7 +71,7 @@ const RegisterPage = () => {
             type="password"
             name="password"
             placeholder="Password"
-            value={formData.password}
+            value={users.password}
             onChange={handleChange}
             required
           />
@@ -82,7 +82,7 @@ const RegisterPage = () => {
             type="password"
             name="confirmPassword"
             placeholder="Confirm Password"
-            value={formData.confirmPassword}
+            value={users.confirmPassword}
             onChange={handleChange}
             required
           />

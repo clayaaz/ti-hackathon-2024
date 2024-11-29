@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './css/AddVehicle.css'
 
 const AddVehicle = () => {
-  const [formData, setFormData] = useState({
+  const [vehicle, setvehicle] = useState({
     name: '',
     number_plate: '',
     phone_number: '',
@@ -17,12 +17,12 @@ const AddVehicle = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     // Handle form submission logic here
-    console.log('Vehicle data:', formData)
+    console.log('Vehicle data:', vehicle)
   }
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
+    setvehicle({
+      ...vehicle,
       [e.target.name]: e.target.value
     })
   }
@@ -37,7 +37,7 @@ const AddVehicle = () => {
           <input
             type="text"
             name="name"
-            value={formData.name}
+            value={vehicle.name}
             onChange={handleChange}
             required
           />
@@ -48,7 +48,7 @@ const AddVehicle = () => {
           <input
             type="text"
             name="number_plate"
-            value={formData.number_plate}
+            value={vehicle.number_plate}
             onChange={handleChange}
             required
           />
@@ -59,7 +59,7 @@ const AddVehicle = () => {
           <input
             type="tel"
             name="phone_number"
-            value={formData.phone_number}
+            value={vehicle.phone_number}
             onChange={handleChange}
             required
           />
@@ -67,7 +67,7 @@ const AddVehicle = () => {
 
         <div className="form-group">
           <label>Size</label>
-          <select name="size" value={formData.size} onChange={handleChange}>
+          <select name="size" value={vehicle.size} onChange={handleChange}>
             <option value="small">Small 5 seats</option>
             <option value="medium">Medium 7 seats</option>
             <option value="large">Large 7+ seats</option>
@@ -79,7 +79,7 @@ const AddVehicle = () => {
           <input
             type="number"
             name="price"
-            value={formData.price}
+            value={vehicle.price}
             onChange={handleChange}
             required
           />
@@ -87,7 +87,7 @@ const AddVehicle = () => {
 
         <div className="form-group">
           <label>Type</label>
-          <select name="type" value={formData.type} onChange={handleChange}>
+          <select name="type" value={vehicle.type} onChange={handleChange}>
             <option value="car">Car</option>
             <option value="motorcycle">Motorcycle</option>
             <option value="bus">Bus</option>
@@ -101,7 +101,7 @@ const AddVehicle = () => {
             type="text"
             name="sub_type"
             placeholder="e.g., SUV, Sedan, Sport"
-            value={formData.sub_type}
+            value={vehicle.sub_type}
             onChange={handleChange}
           />
         </div>
@@ -111,7 +111,7 @@ const AddVehicle = () => {
           <input
             type="url"
             name="image_url"
-            value={formData.image_url}
+            value={vehicle.image_url}
             onChange={handleChange}
             required
           />
@@ -122,7 +122,7 @@ const AddVehicle = () => {
           <input
             type="text"
             name="condition"
-            value={formData.condition}
+            value={vehicle.condition}
             onChange={handleChange}
             required
           />

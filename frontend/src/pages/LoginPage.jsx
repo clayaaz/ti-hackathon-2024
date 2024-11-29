@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './css/LoginPage.css'
 
 const LoginPage = () => {
-    const [formData, setFormData] = useState({
+    const [users, setusers] = useState({
       email: '',
       password: ''
     })
@@ -11,12 +11,12 @@ const LoginPage = () => {
     const handleSubmit = (e) => {
       e.preventDefault()
       // Handle login logic here
-      console.log('Login attempt:', formData)
+      console.log('Login attempt:', users)
     }
   
     const handleChange = (e) => {
-      setFormData({
-        ...formData,
+      setusers({
+        ...users,
         [e.target.name]: e.target.value
       })
     }
@@ -31,7 +31,7 @@ const LoginPage = () => {
               type="email"
               name="email"
               placeholder="Email"
-              value={formData.email}
+              value={users.email}
               onChange={handleChange}
               required
             />
@@ -42,7 +42,7 @@ const LoginPage = () => {
               type="password"
               name="password"
               placeholder="Password"
-              value={formData.password}
+              value={users.password}
               onChange={handleChange}
               required
             />

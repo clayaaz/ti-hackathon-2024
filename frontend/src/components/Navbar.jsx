@@ -1,24 +1,27 @@
 import React from 'react'
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom'
-import './Navbar.css'
+import './css/Navbar.css'
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <div className="navbar-content">
-          <Link to="/" className="navbar-logo">
-            Logo
-          </Link>
+    <div className="nav-wrapper">
+      <nav className="nav-container">
+        <Link to="/" className="nav-logo">
+          Logo
+        </Link>
 
-          <Link to="/login" className="navbar-user">
-            <FaUserCircle className="user-icon" />
-            <span>Login / Register</span>
-          </Link>
+        <div className="nav-center">
+          <Link to="/vehicles" className="nav-item">Browse Vehicles</Link>
+          <Link to="/add-vehicle" className="nav-item">Add Vehicle</Link>
         </div>
-      </div>
-    </nav>
+
+        <Link to="/login" className="nav-auth">
+          <FaUserCircle className="auth-icon" />
+          <span>Login / Register</span>
+        </Link>
+      </nav>
+    </div>
   )
 }
 
