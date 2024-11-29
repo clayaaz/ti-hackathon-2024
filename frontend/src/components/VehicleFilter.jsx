@@ -58,9 +58,9 @@ const VehicleFilter = ({ onFilterChange }) => {
           onChange={handleFilterChange}
         >
           <option value="all">All Sizes</option>
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
+          <option value="small">Small 5 seats</option>
+          <option value="medium">Medium 7 seats</option>
+          <option value="large">Large 7+ seats</option>
         </select>
       </div>
 
