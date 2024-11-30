@@ -23,4 +23,51 @@ const getUsers = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, getUsers };
+const loginUser = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        console.log('Login attempt for:', email);
+
+        // Find user by email
+        const users = await userSchema.find();
+        console.log('All users:', users); // Debug log
+
+        const user = await userSchema.findOne({ email });
+        
+        if (!user) {
+            return res.status(401).json({ 
+                success: false,
+                error: 'Invalid email or password' 
+            });
+        }
+        
+        // Simple password comparison
+        if (password !== user.password) {
+            return res.status(401).json({ 
+                success: false,
+                error: 'Invalid email or password' 
+            });
+        }
+        
+        const userResponse = {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            username: user.username
+        };
+        
+        res.status(200).json({ 
+            success: true,
+            user: userResponse,
+            message: 'Login successful' 
+        });
+    } catch (err) {
+        console.error('Login error:', err);
+        res.status(500).json({ 
+            success: false,
+            error: 'Server error during login' 
+        });
+    }
+};
+
+export { registerUser, getUsers, loginUser };

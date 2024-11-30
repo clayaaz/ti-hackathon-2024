@@ -72,10 +72,10 @@ const VehicleFilter = ({ onFilterChange }) => {
           onChange={handleFilterChange}
         >
           <option value="all">All Prices</option>
-          <option value="0-50">Rs.0 - Rs.50</option>
-          <option value="51-100">Rs.51 - Rs.100</option>
-          <option value="101-150">Rs.101 - Rs.150</option>
-          <option value="151+">Rs.151+</option>
+          <option value="1000-1500">Rs.1000 - Rs.1500</option>
+          <option value="1500-2000">Rs.1500 - Rs.2000</option>
+          <option value="2000-2500">Rs.2000 - Rs.2500</option>
+          <option value="2500+">Rs.2500+</option>
         </select>
       </div>
     </div>

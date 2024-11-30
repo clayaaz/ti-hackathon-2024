@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './css/RegisterPage.css'
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
   const [users, setusers] = useState({
     name: '',
     username: '',
@@ -10,15 +11,50 @@ const RegisterPage = () => {
     password: '',
     confirmPassword: ''
   })
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Add registration logic here
+    setError('');
+
+    // Validate passwords match
     if (users.password !== users.confirmPassword) {
-      alert('Passwords do not match!')
-      return
+      setError('Passwords do not match!');
+      return;
     }
-    console.log('Register attempt:', users)
+
+    try {
+      const baseUrl = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:5000' 
+        : '';
+
+      const response = await fetch(`${baseUrl}/api/users`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: users.name,
+          username: users.username,
+          email: users.email,
+          password: users.password
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Registration successful
+        alert('Registration successful!');
+        navigate('/login'); // Redirect to login page
+      } else {
+        // Registration failed
+        setError(data.error || 'Registration failed');
+      }
+    } catch (err) {
+      console.error('Registration error:', err);
+      setError('An error occurred during registration');
+    }
   }
 
   const handleChange = (e) => {
@@ -32,6 +68,8 @@ const RegisterPage = () => {
     <div className="register-container">
       <form className="register-form" onSubmit={handleSubmit}>
         <h2>Register</h2>
+
+        {error && <div className="error-message">{error}</div>}
 
         <div className="form-group">
           <input

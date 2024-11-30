@@ -32,37 +32,43 @@ export const AuthProvider = ({ children }) => {
   }
 
   // Login function
-  const login = async (credentials) => {
+  const login = async (email, password) => {
     try {
-      // Replace with your actual API call
-      const response = await fetch('/api/login', {
+      const baseUrl = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:5000' 
+        : '';
+
+      console.log('Making login request with:', { email, password });
+      
+      const response = await fetch(`${baseUrl}/api/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(credentials),
-      })
+        body: JSON.stringify({ email, password }),
+      });
 
-      if (!response.ok) {
-        throw new Error('Login failed')
+      const data = await response.json();
+      console.log('Login response:', data);
+
+      if (response.ok && data.success) {
+        setUser(data.user);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        return { success: true };
+      } else {
+        return { 
+          success: false, 
+          error: data.error || 'Invalid credentials'
+        };
       }
-
-      const data = await response.json()
-      
-      // Save to localStorage
-      localStorage.setItem('authToken', data.token)
-      localStorage.setItem('userData', JSON.stringify(data.user))
-      
-      // Update state
-      setUser(data.user)
-      setIsLoggedIn(true)
-
-      return data
     } catch (error) {
-      console.error('Login error:', error)
-      throw error
+      console.error('Login error details:', error);
+      return { 
+        success: false, 
+        error: error.message || 'An error occurred during login'
+      };
     }
-  }
+  };
 
   // Logout function
   const logout = () => {

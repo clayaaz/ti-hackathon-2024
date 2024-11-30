@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './css/AddVehicle.css'
+import { useVehicleStore } from '../store/vehicles'
 
 const AddVehicle = () => {
   const [vehicle, setvehicle] = useState({
@@ -13,11 +14,34 @@ const AddVehicle = () => {
     image_url: '',
     condition: ''
   })
+  const {createVehicle} = useVehicleStore()
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Handle form submission logic here
-    console.log('Vehicle data:', vehicle)
+  const handleSubmit = async(e) => {
+    e.preventDefault(); // Prevent form from reloading the page
+    
+    try {
+      const {success, message} = await createVehicle(vehicle);
+      if (success) {
+        alert(message); // Or use a better notification system
+        // Reset form
+        setvehicle({
+          name: '',
+          number_plate: '',
+          phone_number: '',
+          size: 'small',
+          price: '',
+          type: 'car',
+          sub_type: '',
+          image_url: '',
+          condition: ''
+        });
+      } else {
+        alert('Failed to add vehicle: ' + message);
+      }
+    } catch (error) {
+      console.error('Error adding vehicle:', error);
+      alert('Failed to add vehicle. Please try again.');
+    }
   }
   const getAnimationDelay = (index) => ({
     animationDelay: `${index * 0.1}s`

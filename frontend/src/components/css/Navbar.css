@@ -1,118 +1,43 @@
-.nav-wrapper {
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  height: 70px;
-  padding: 0 2rem;
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 1rem 2rem;
+  border-radius: 12px;
 }
 
-.nav-logo {
+.nav-brand a {
+  color: #333;
+  text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
   color: #333;
   text-decoration: none;
-}
-
-.nav-center {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.nav-item {
-  color: #666;
-  text-decoration: none;
-  font-weight: 500;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.nav-item:hover {
-  background-color: #f5f5f5;
-  color: #333;
-}
-
-.nav-auth {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #666;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.auth-icon {
-  width: 24px;
-  height: 24px;
-}
-
-@media (max-width: 768px) {
-  .nav-container {
-    padding: 0 1rem;
-  }
-
-  .nav-center {
-    gap: 1rem;
-  }
-
-  .nav-item {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  .nav-auth span {
-    display: none;
-  }
-}
-/* Add these to your existing CSS */
-
-.nav-auth {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: #666;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.user-name {
-  color: #333;
-  font-weight: 600;
-}
-
-.logout-btn {
-  background: none;
-  border: none;
-  color: #dc3545;
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.9rem;
   border-radius: 4px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
-.logout-btn:hover {
-  background-color: #fff1f1;
-  color: #dc2535;
+.nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 768px) {
-  .nav-auth .user-name {
-    display: none;
-  }
-  
-  .logout-btn {
-    font-size: 0.8rem;
-  }
+/* User menu specific styles */
+.nav-links .user-menu-container {
+  position: relative;
+  margin-left: 1rem;
 }

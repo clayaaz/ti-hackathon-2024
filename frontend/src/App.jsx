@@ -8,22 +8,21 @@ import {Routes, Route, BrowserRouter} from "react-router-dom"
 import AddVehicle from "./pages/AddVehicle"
 import { AuthProvider } from "./context/AuthContext"
 
-
 function App() {
   return (
     <StrictMode>
-      <BrowserRouter>
       <AuthProvider>
-    <Navbar></Navbar>
-    <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/vehicles" element={<Vehicles />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/add-vehicle" element={<AddVehicle/>} />
-        </Routes>
-        </AuthProvider>
+        <BrowserRouter>
+          <Navbar></Navbar>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/vehicles" element={<Vehicles />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/add-vehicle" element={<AddVehicle/>} />
+          </Routes>
         </BrowserRouter>
+      </AuthProvider>
     </StrictMode>
   )
 }
