@@ -19,6 +19,10 @@ const AddVehicle = () => {
     // Handle form submission logic here
     console.log('Vehicle data:', vehicle)
   }
+  const getAnimationDelay = (index) => ({
+    animationDelay: `${index * 0.1}s`
+  });
+
 
   const handleChange = (e) => {
     setvehicle({
@@ -26,13 +30,14 @@ const AddVehicle = () => {
       [e.target.name]: e.target.value
     })
   }
+  
 
   return (
     <div className="add-vehicle-container">
       <form className="add-vehicle-form" onSubmit={handleSubmit}>
         <h2>Add Your Vehicle</h2>
 
-        <div className="form-group">
+        <div className="form-group" style={getAnimationDelay(1)}>
           <label>Vehicle Name</label>
           <input
             type="text"
@@ -43,7 +48,7 @@ const AddVehicle = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-group" style={getAnimationDelay(2)}>
           <label>Number Plate</label>
           <input
             type="text"
@@ -54,7 +59,7 @@ const AddVehicle = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-group" style={getAnimationDelay(3)}>
           <label>Phone Number</label>
           <input
             type="tel"
@@ -65,7 +70,7 @@ const AddVehicle = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-group" style={getAnimationDelay(4)}>
           <label>Size</label>
           <select name="size" value={vehicle.size} onChange={handleChange}>
             <option value="small">Small 5 seats</option>
@@ -74,7 +79,7 @@ const AddVehicle = () => {
           </select>
         </div>
 
-        <div className="form-group">
+        <div className="form-group" style={getAnimationDelay(5)}>
           <label>Price (per day)</label>
           <input
             type="number"
@@ -85,7 +90,7 @@ const AddVehicle = () => {
           />
         </div>
 
-        <div className="form-group">
+          <div className="form-group" style={getAnimationDelay(6)}>
           <label>Type</label>
           <select name="type" value={vehicle.type} onChange={handleChange}>
             <option value="car">Car</option>
@@ -95,7 +100,7 @@ const AddVehicle = () => {
           </select>
         </div>
 
-        <div className="form-group">
+        <div className="form-group" style={getAnimationDelay(7)}>
           <label>Sub Type</label>
           <input
             type="text"
@@ -106,7 +111,7 @@ const AddVehicle = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-group" style={getAnimationDelay(8)}>
           <label>Car Image</label>
           <input
             type="url"
@@ -117,7 +122,7 @@ const AddVehicle = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-group" style={getAnimationDelay(9)}>
           <label>Car Condition</label>
           <input
             type="text"
@@ -128,7 +133,7 @@ const AddVehicle = () => {
           />
         </div>
 
-        <button type="submit">Add Vehicle</button>
+        <button type="submit" style={getAnimationDelay(10)}>Add Vehicle</button>
       </form>
     </div>
   )
