@@ -7,7 +7,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 1rem 2rem;
   border-radius: 12px;
-  background: linear-gradient(-45deg, #e081f8, #f0bdd0, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #bebcbf, #5f5b5d, #939495, #878b8a);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }

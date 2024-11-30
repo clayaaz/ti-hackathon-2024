@@ -168,3 +168,8 @@
   .book-now-btn:focus {
     outline: none;
   }
+  body {
+    background-color: #c6c4c4;
+    margin: 0;
+    padding: 0;
+  }
