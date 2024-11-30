@@ -1,5 +1,6 @@
 import React from 'react'
 import './css/HomePage.css'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
   return (
@@ -15,7 +16,9 @@ const HomePage = () => {
         <div className="hero-content">
           <h1>Car Rentals for Every Occasion</h1>
           <p>150+ Types of Premium Cars Available</p>
+          <Link to="/vehicles">
           <button className="book-now-btn">Book Now</button>
+          </Link>
         </div>
       </section>
 

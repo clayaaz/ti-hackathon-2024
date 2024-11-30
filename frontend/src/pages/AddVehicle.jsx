@@ -60,11 +60,11 @@ const AddVehicle = () => {
   return (
     <div className="add-vehicle-container">
       <form className="add-vehicle-form" onSubmit={handleSubmit}>
-        <h2>Add Your Vehicle</h2>
+      <h2>Add Your Vehicle</h2>
 
         <div className="form-group" style={getAnimationDelay(1)}>
           <label>Vehicle Name</label>
-          <input
+          <input style={{maxWidth: '570px'}}
             type="text"
             name="name"
             value={vehicle.name}
@@ -74,7 +74,7 @@ const AddVehicle = () => {
         </div>
         <div className="form-group" style={getAnimationDelay(1)}>
           <label>Your Name</label>
-          <input
+          <input style={{maxWidth: '570px'}}
             type="text"
             name="user_name"
             value={vehicle.user_name}
@@ -85,7 +85,7 @@ const AddVehicle = () => {
 
         <div className="form-group" style={getAnimationDelay(2)}>
           <label>Number Plate</label>
-          <input
+          <input style={{maxWidth: '570px'}}
             type="text"
             name="number_plate"
             value={vehicle.number_plate}
@@ -96,7 +96,7 @@ const AddVehicle = () => {
 
         <div className="form-group" style={getAnimationDelay(3)}>
           <label>Phone Number</label>
-          <input
+          <input style={{maxWidth: '570px'}}
             type="tel"
             name="phone_number"
             value={vehicle.phone_number}
@@ -116,7 +116,7 @@ const AddVehicle = () => {
 
         <div className="form-group" style={getAnimationDelay(5)}>
           <label>Price (per day)</label>
-          <input
+          <input style={{maxWidth: '570px'}}
             type="number"
             name="price"
             value={vehicle.price}
@@ -137,7 +137,7 @@ const AddVehicle = () => {
 
         <div className="form-group" style={getAnimationDelay(7)}>
           <label>Sub Type</label>
-          <input
+          <input style={{maxWidth: '570px'}}
             type="text"
             name="sub_type"
             placeholder="e.g., SUV, Sedan, Sport"
@@ -148,7 +148,7 @@ const AddVehicle = () => {
 
         <div className="form-group" style={getAnimationDelay(8)}>
           <label>Car Image</label>
-          <input
+          <input style={{maxWidth: '570px'}}
             type="url"
             name="image_url"
             value={vehicle.image_url}
@@ -159,7 +159,7 @@ const AddVehicle = () => {
 
         <div className="form-group" style={getAnimationDelay(9)}>
           <label>Car Condition</label>
-          <input
+          <input style={{maxWidth: '570px'}}
             type="text"
             name="condition"
             value={vehicle.condition}
