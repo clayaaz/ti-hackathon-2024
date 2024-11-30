@@ -17,7 +17,9 @@ const Navbar = () => {
       <div className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/vehicles">Vehicles</Link>
-        <Link to="/add-vehicle">Add Vehicle</Link>
+        {user && (
+          <Link to="/add-vehicle">Add Vehicle</Link>
+        )}
         
         {user ? (
           <UserMenu />

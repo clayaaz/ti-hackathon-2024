@@ -26,11 +26,9 @@ const getUsers = async (req, res) => {
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
-        console.log('Login attempt for:', email);
 
         // Find user by email
         const users = await userSchema.find();
-        console.log('All users:', users); // Debug log
 
         const user = await userSchema.findOne({ email });
         
