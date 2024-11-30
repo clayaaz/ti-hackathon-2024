@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const vehicleSchema = new mongoose.Schema({
     name: { type: String, required: true },
+    user_name: { type: String, required: true },
     number_plate: { type: String, required: true },
     phone_number: { type: String, required: true },
     size: { type: String, required: true },

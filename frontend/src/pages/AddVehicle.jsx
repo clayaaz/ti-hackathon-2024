@@ -26,6 +26,7 @@ const AddVehicle = () => {
         // Reset form
         setvehicle({
           name: '',
+          user_name: '',
           number_plate: '',
           phone_number: '',
           size: 'small',
@@ -67,6 +68,16 @@ const AddVehicle = () => {
             type="text"
             name="name"
             value={vehicle.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group" style={getAnimationDelay(1)}>
+          <label>Your Name</label>
+          <input
+            type="text"
+            name="user_name"
+            value={vehicle.user_name}
             onChange={handleChange}
             required
           />
