@@ -145,4 +145,26 @@
       grid-template-columns: 1fr;
     }
   }
+  .book-now-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 10px 24px;  /* Reduced padding */
+    font-size: 1.1rem;   /* Slightly smaller font */
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    outline: none;
+    width: fit-content;  /* Ensures button only takes necessary width */
+    min-width: 120px;    /* Sets a minimum width */
+  }
   
+  .book-now-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .book-now-btn:focus {
+    outline: none;
+  }

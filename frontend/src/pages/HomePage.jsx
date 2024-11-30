@@ -15,6 +15,7 @@ const HomePage = () => {
         <div className="hero-content">
           <h1>Car Rentals for Every Occasion</h1>
           <p>150+ Types of Premium Cars Available</p>
+          <button className="book-now-btn">Book Now</button>
         </div>
       </section>
 

@@ -3,11 +3,28 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: white;
+  animation: gradientAnimation 15s ease infinite;
   color: #333;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 1rem 2rem;
   border-radius: 12px;
+}
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  }
+  25% {
+    background: linear-gradient(to right, #e8f5e9, #c8e6c9); /* Light green */
+  }
+  50% {
+    background: linear-gradient(to right, #e3f2fd, #bbdefb); /* Light blue */
+  }
+  75% {
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec); 
+  }
+  100% {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  }
 }
 
 .nav-brand a {
