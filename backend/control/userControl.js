@@ -1,11 +1,10 @@
-const User = require('../models/user');
-
+import userSchema from '../moduleDBs/user.js';
 // Register User
 const registerUser = async (req, res) => {
     try {
         const { name, username, email, password } = req.body;
         
-        const newUser = new User({ name, username, email, password });
+        const newUser = new userSchema({ name, username, email, password });
         await newUser.save();
         res.status(201).json({ message: 'User registered successfully!', user: newUser });
         //if not necessary then idk but gotta return after user logsin
@@ -17,7 +16,7 @@ const registerUser = async (req, res) => {
 // to get back all the user data
 const getUsers = async (req, res) => {
     try {
-        const users = await User.find();
+        const users = await userSchema.find();
         res.json(users);
     } catch (err) {
         res.status(500).json({ error: err.message });

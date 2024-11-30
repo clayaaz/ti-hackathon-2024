@@ -1,9 +1,9 @@
-const Vehicle = require('../models/vehicle');
+import Vehicle from '../moduleDBs/vehicle.js';
 
 // for adding of new vehicle
 const addVehicle = async (req, res) => {
     try {
-        const { phone_no, number_plate, size, price, type, sub_type } = req.body;
+        const { phone_no, number_plate, size, price, type, sub_type, img } = req.body;
 
         const newVehicle = new Vehicle({
             phone_no,
@@ -12,6 +12,7 @@ const addVehicle = async (req, res) => {
             price,
             type,
             sub_type,
+            img
         });
 
         await newVehicle.save();
@@ -20,3 +21,5 @@ const addVehicle = async (req, res) => {
         res.status(400).json({ error: err.message });
     }
 };
+
+export default addVehicle;

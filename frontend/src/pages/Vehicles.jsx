@@ -2,41 +2,22 @@ import React, { useState, useEffect } from 'react'
 import VehicleCard from '../components/VehicleCard'
 import VehicleFilter from '../components/VehicleFilter'
 import './css/Vehicle.css'
+import { useVehicleStore } from '../store/vehicles'
 
 const Vehicles = () => {
-  const [vehicles, setVehicles] = useState([
-    {
-        id: 1,
-        name: "Toyota Camry",
-        number_plate: "ABC 123",
-        price: "50",
-        type: "Car",
-        sub_type: "Sedan",
-        image_url: "https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=2936&auto=format&fit=crop",
-        size: "Medium"
-      },
-      {
-        id: 2,
-        name: "Honda Civic",
-        number_plate: "XYZ 789",
-        price: "45",
-        type: "Car",
-        sub_type: "Sedan",
-        image_url: "https://images.unsplash.com/photo-1560009320-c01920eef9f8?q=80&w=2940&auto=format&fit=crop",
-        size: "Medium"
-      },
-      {
-        id: 3,
-        name: "Tesla Model 3",
-        number_plate: "EV 456",
-        price: "80",
-        type: "Car",
-        sub_type: "Electric",
-        image_url: "https://images.unsplash.com/photo-1536700503339-1e4b06520771?q=80&w=2940&auto=format&fit=crop",
-        size: "Medium"
-      }
-  ])
+  const {fetchVehicles, vehicles} = useVehicleStore()
   const [filteredVehicles, setFilteredVehicles] = useState(vehicles)
+
+  // Effect to fetch vehicles
+  useEffect(() => {
+    fetchVehicles();
+  }, [fetchVehicles]);
+
+  // Add this new effect to update filteredVehicles when vehicles changes
+  useEffect(() => {
+    setFilteredVehicles(vehicles);
+  }, [vehicles]);
+
 
   const handleFilterChange = (filters) => {
     let filtered = vehicles
