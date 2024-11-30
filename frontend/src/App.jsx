@@ -6,12 +6,14 @@ import RegisterPage from "./pages/RegisterPage"
 import HomePage from './pages/HomePage'
 import {Routes, Route, BrowserRouter} from "react-router-dom"
 import AddVehicle from "./pages/AddVehicle"
+import { AuthProvider } from "./context/AuthContext"
 
 
 function App() {
   return (
     <StrictMode>
       <BrowserRouter>
+      <AuthProvider>
     <Navbar></Navbar>
     <Routes>
           <Route path="/" element={<HomePage />} />
@@ -20,6 +22,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/add-vehicle" element={<AddVehicle/>} />
         </Routes>
+        </AuthProvider>
         </BrowserRouter>
     </StrictMode>
   )
