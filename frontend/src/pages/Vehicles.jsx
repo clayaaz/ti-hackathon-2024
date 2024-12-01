@@ -73,7 +73,7 @@ const Vehicles = () => {
         
         <div className="vehicle-cards-container">
           {vehicles.map((vehicle) => (
-            <VehicleCard key={vehicle.id} vehicle={vehicle} />
+            <VehicleCard key={vehicle._id} vehicle={vehicle} />
           ))}
         </div>
       </div>

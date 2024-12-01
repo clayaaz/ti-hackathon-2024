@@ -3,8 +3,16 @@ import { createPortal } from 'react-dom'
 import './css/VehicleCard.css'
 
 const VehicleCard = ({ vehicle }) => {
-  const [showModal, setShowModal] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const { name, user_name, number_plate, price, type, sub_type, image_url, size, phone_number } = vehicle
+
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
 
   return (
     <div className="vehicle-card">
@@ -22,15 +30,15 @@ const VehicleCard = ({ vehicle }) => {
           <span className="vehicle-size">{size}</span>
           <span className="vehicle-price">Rs.{price}/day</span>
         </div>
-        <button className="rent-button" onClick={() => setShowModal(true)}>
+        <button className="rent-button" onClick={openModal}>
           Rent Now
         </button>
       </div>
 
-      {showModal && createPortal(
+      {isModalOpen && createPortal(
         <div 
           className="modal-overlay" 
-          onClick={() => setShowModal(false)}
+          onClick={closeModal}
         >
           <div 
             className="modal-content" 
@@ -47,12 +55,22 @@ const VehicleCard = ({ vehicle }) => {
               <p><strong>Size:</strong> {size}</p>
               <p><strong>Price:</strong> Rs.{price}/day</p>
             </div>
-            <button 
-              className="close-button" 
-              onClick={() => setShowModal(false)}
-            >
-              Close
-            </button>
+            <div className="modal-buttons">
+              <a 
+                href={`mailto:${vehicle.user_email}?subject=Inquiry about ${vehicle.name}&body=Hello, I am interested in renting your ${vehicle.name}.`}
+                className="contact-owner-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contact Owner
+              </a>
+              <button 
+                className="close-button" 
+                onClick={closeModal}
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>,
         document.getElementById('portal-root')
