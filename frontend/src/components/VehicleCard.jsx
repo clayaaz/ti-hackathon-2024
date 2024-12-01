@@ -57,7 +57,7 @@ const VehicleCard = ({ vehicle }) => {
             </div>
             <div className="modal-buttons">
               <a 
-                href={`mailto:${vehicle.user_email}?subject=Inquiry about ${vehicle.name}&body=Hello, I am interested in renting your ${vehicle.name}.`}
+                href={` :${vehicle.user_email}?subject=Inquiry about ${vehicle.name}&body=Hello, I am interested in renting your ${vehicle.name}.`}
                 className="contact-owner-button"
                 target="_blank"
                 rel="noopener noreferrer"

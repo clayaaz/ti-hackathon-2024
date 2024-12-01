@@ -72,7 +72,7 @@ const Vehicles = () => {
         <VehicleFilter onFilterChange={handleFilterChange} />
         
         <div className="vehicle-cards-container">
-          {vehicles.map((vehicle) => (
+          {filteredVehicles.map((vehicle) => (
             <VehicleCard key={vehicle._id} vehicle={vehicle} />
           ))}
         </div>

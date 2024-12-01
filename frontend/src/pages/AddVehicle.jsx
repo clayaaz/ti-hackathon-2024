@@ -120,7 +120,7 @@ const AddVehicle = () => {
         <div className="form-group" style={getAnimationDelay(4)}>
           <label>Size</label>
           <select name="size" value={vehicle.size} onChange={handleChange}>
-            <option value="small">Small 5 seats</option>
+            <option value="small">Small 1-5 seats</option>
             <option value="medium">Medium 7 seats</option>
             <option value="large">Large 7+ seats</option>
           </select>
