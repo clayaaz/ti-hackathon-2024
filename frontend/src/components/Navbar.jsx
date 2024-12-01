@@ -39,7 +39,7 @@ const Navbar = () => {
         {user && (<Link to="/vehicles">Vehicles</Link>)}
         
         {user && (
-          <Link to="/add-vehicle">Add Vehicle</Link>
+          <Link to="/add-vehicle" style={{paddingLeft: '8px', whiteSpace: 'nowrap'}}>Add Vehicle</Link>
         )}
         
         {user ? (
