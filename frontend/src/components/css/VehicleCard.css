@@ -123,3 +123,24 @@
   .close-button:hover {
     background-color: #cc0000;
   }
+  
+  .vehicle-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .vehicle-card {
+    flex: 0 0 calc(33.333% - 14px);  /* This ensures 3 cards per row */
+    max-width: calc(33.333% - 14px);
+    margin-bottom: 20px;
+  }
+  
+  /* For smaller screens */
+  @media (max-width: 768px) {
+    .vehicle-card {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }

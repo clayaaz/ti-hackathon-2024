@@ -71,9 +71,9 @@ const Vehicles = () => {
       <div className="home-content">
         <VehicleFilter onFilterChange={handleFilterChange} />
         
-        <div className="vehicles-container">
-          {filteredVehicles.map((vehicle) => (
-            <VehicleCard key={vehicle._id} vehicle={vehicle} />
+        <div className="vehicle-cards-container">
+          {vehicles.map((vehicle) => (
+            <VehicleCard key={vehicle.id} vehicle={vehicle} />
           ))}
         </div>
       </div>
