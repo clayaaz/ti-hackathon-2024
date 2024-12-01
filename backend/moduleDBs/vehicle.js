@@ -8,7 +8,7 @@ const vehicleSchema = new mongoose.Schema({
     size: { type: String, required: true },
     price: { type: Number, required: true },
     type: { type: String, required: true },
-    sub_type: String,
+    sub_type: {type: String, required: false},
     image_url: { type: String, required: true },
     condition: { type: String, required: true }
 }, {
