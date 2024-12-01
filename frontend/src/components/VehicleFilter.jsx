@@ -26,7 +26,7 @@ const VehicleFilter = ({ onFilterChange }) => {
       <div className="filter-group">
         <label>Search</label>
         <input
-          style={{ maxWidth: "155px" }}
+          style={{ maxWidth: "70%" }}
           type="text"
           name="search"
           value={filters.search}
