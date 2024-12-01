@@ -36,7 +36,8 @@ const Navbar = () => {
       
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/vehicles">Vehicles</Link>
+        {user && (<Link to="/vehicles">Vehicles</Link>)}
+        
         {user && (
           <Link to="/add-vehicle">Add Vehicle</Link>
         )}

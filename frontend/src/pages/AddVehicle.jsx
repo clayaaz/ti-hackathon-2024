@@ -12,7 +12,8 @@ const AddVehicle = () => {
     type: 'car',
     sub_type: '',
     image_url: '',
-    condition: ''
+    condition: '',
+    user_email: ''
   })
   const {createVehicle} = useVehicleStore()
 
@@ -34,7 +35,8 @@ const AddVehicle = () => {
           type: 'car',
           sub_type: '',
           image_url: '',
-          condition: ''
+          condition: '',
+          user_email: ''
         });
       } else {
         alert('Failed to add vehicle: ' + message);
@@ -78,6 +80,16 @@ const AddVehicle = () => {
             type="text"
             name="user_name"
             value={vehicle.user_name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group" style={getAnimationDelay(1)}>
+          <label>Your Email</label>
+          <input style={{maxWidth: '570px'}}
+            type="text"
+            name="user_email"
+            value={vehicle.user_email}
             onChange={handleChange}
             required
           />
