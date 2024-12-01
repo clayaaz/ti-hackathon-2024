@@ -72,7 +72,7 @@
 }
 
 .dark-mode-toggle {
-  background: none;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   font-size: 1rem;
@@ -89,16 +89,19 @@
 
 /* Add these styles to your global CSS or App.css */
 body.dark-mode {
-  background-color: #121212;
+  background-color: #000000;
   color: #ffffff;
 }
 
 body.dark-mode .navbar {
-  background: linear-gradient(-45deg, #9f9d9d, #9d9a9a, #707070);
+  background: linear-gradient(-45deg, #000000, #000000, #000000);
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 body.dark-mode a {
   color: #ffffff;
+}
+body.dark-mode .dark-mode-toggle {
+background-color: transparent;
 }
