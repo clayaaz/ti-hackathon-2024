@@ -174,3 +174,35 @@
     margin: 0;
     padding: 0;
   }
+  
+  /* Dark Mode Styles */
+  body.dark-mode .home-container {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .feature-card,
+  body.dark-mode .service-card,
+  body.dark-mode .car-card {
+    background: #1f1f1f;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
+  
+  body.dark-mode .service-card p,
+  body.dark-mode .car-card p {
+    color: #ffffff !important;
+  }
+  
+  body.dark-mode .service-card,
+  body.dark-mode .car-card {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--bg-image) !important;
+  }
+  
+  body.dark-mode .book-now-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  body.dark-mode .book-now-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }

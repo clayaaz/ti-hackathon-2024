@@ -17,6 +17,7 @@
   
   .filter-group {
     margin-bottom: 1.5rem;
+    position: relative;
   }
   
   .filter-group:last-child {
@@ -31,7 +32,8 @@
     font-weight: 500;
   }
   
-  .filter-group select {
+  .filter-group select,
+  .search-input {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #ddd;
@@ -42,7 +44,8 @@
     cursor: pointer;
   }
   
-  .filter-group select:focus {
+  .filter-group select:focus,
+  .search-input:focus {
     outline: none;
     border-color: #4a90e2;
   }
@@ -124,4 +127,40 @@
       font-size: 16px; /* Prevents zoom on mobile */
       padding: 0.6rem 1rem 0.6rem 2.5rem;
     }
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .filter-sidebar {
+    background: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  body.dark-mode .filter-sidebar h3 {
+    color: #ffffff;
+  }
+  
+  body.dark-mode .filter-group label {
+    color: #cccccc;
+  }
+  
+  body.dark-mode .filter-group select,
+  body.dark-mode .search-input {
+    background-color: #404040;
+    border-color: #505050;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .filter-group select:focus,
+  body.dark-mode .search-input:focus {
+    border-color: #66a6ff;
+    background-color: #404040;
+  }
+  
+  body.dark-mode .filter-group select option {
+    background-color: #404040;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .search-input::placeholder {
+    color: #999;
   }

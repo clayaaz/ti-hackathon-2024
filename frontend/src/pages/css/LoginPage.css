@@ -69,3 +69,47 @@
   .register-link a:hover {
     text-decoration: underline;
   }
+  
+  /* Dark mode styles */
+  body.dark-mode .login-container {
+    background-color: #121212;
+  }
+  
+  body.dark-mode .login-form {
+    background: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  body.dark-mode .login-form h2 {
+    color: #ffffff;
+  }
+  
+  body.dark-mode .form-group input {
+    background-color: #404040;
+    border-color: #505050;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .form-group input:focus {
+    border-color: #66a6ff;
+  }
+  
+  body.dark-mode .form-group input::placeholder {
+    color: #999;
+  }
+  
+  body.dark-mode .register-link {
+    color: #cccccc;
+  }
+  
+  body.dark-mode .register-link a {
+    color: #66a6ff;
+  }
+  
+  body.dark-mode button {
+    background-color: #66a6ff;
+  }
+  
+  body.dark-mode button:hover {
+    background-color: #4a90e2;
+  }

@@ -7,7 +7,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 1rem 2rem;
   border-radius: 12px;
-  background: linear-gradient(-45deg, #ffffff, #e7e7e7, #f7f6f6);
+  background: linear-gradient(-45deg, #ffffff, #fafafa, #f5f5f5);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }
@@ -69,4 +69,36 @@
 .nav-links .user-menu-container {
   position: relative;
   margin-left: 1rem;
+}
+
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 16px;
+  color: inherit;
+  text-decoration: none;
+  margin: 0;
+  font-family: inherit;
+}
+
+.dark-mode-toggle:hover {
+  opacity: 0.8;
+}
+
+/* Add these styles to your global CSS or App.css */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .navbar {
+  background: linear-gradient(-45deg, #9f9d9d, #9d9a9a, #707070);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode a {
+  color: #ffffff;
 }

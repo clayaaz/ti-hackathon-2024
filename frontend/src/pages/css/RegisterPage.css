@@ -77,4 +77,53 @@
     border-radius: 4px;
     margin-bottom: 15px;
     text-align: center;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .register-container {
+    background-color: #121212;
+  }
+  
+  body.dark-mode .register-form {
+    background: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  body.dark-mode .register-form h2 {
+    color: #ffffff;
+  }
+  
+  body.dark-mode .form-group input {
+    background-color: #404040;
+    border-color: #505050;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .form-group input:focus {
+    border-color: #66a6ff;
+  }
+  
+  body.dark-mode .form-group input::placeholder {
+    color: #999;
+  }
+  
+  body.dark-mode .login-link {
+    color: #cccccc;
+  }
+  
+  body.dark-mode .login-link a {
+    color: #66a6ff;
+  }
+  
+  body.dark-mode button {
+    background-color: #66a6ff;
+  }
+  
+  body.dark-mode button:hover {
+    background-color: #4a90e2;
+  }
+  
+  body.dark-mode .error-message {
+    background-color: #3d0000;
+    color: #ff6b6b;
   } 

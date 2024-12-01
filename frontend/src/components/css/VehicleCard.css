@@ -144,3 +144,52 @@
       max-width: 100%;
     }
   }
+  
+  /* Dark mode styles */
+  body.dark-mode .vehicle-card {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  body.dark-mode .vehicle-info {
+    background-color: #2d2d2d;
+  }
+  
+  body.dark-mode .vehicle-name,
+  body.dark-mode .owner-name,
+  body.dark-mode .vehicle-details,
+  body.dark-mode .vehicle-meta {
+    color: #ffffff;
+  }
+  
+  body.dark-mode .plate-number,
+  body.dark-mode .vehicle-type,
+  body.dark-mode .vehicle-size {
+    background-color: #404040;
+    color: #ffffff;
+  }
+  
+  /* Modal dark mode styles */
+  body.dark-mode .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  body.dark-mode .modal-content {
+    background-color: #2d2d2d;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .modal-details {
+    color: #ffffff;
+  }
+  
+  body.dark-mode .rent-button,
+  body.dark-mode .close-button {
+    background-color: #404040;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .rent-button:hover,
+  body.dark-mode .close-button:hover {
+    background-color: #505050;
+  }
